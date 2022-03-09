@@ -16,7 +16,7 @@ function App() {
       }}).then(
         function(response) {
           if (response.status !== 200) {
-            console.log('Error! Response status ')
+            console.log('Error! Response status ' + response.status)
             alert('Looks like there was a problem');
             return;
           }
@@ -27,7 +27,7 @@ function App() {
     )
         .catch(function(err) {
           alert("Error!")
-          console.log('Fetch Error :-S', err);
+          console.log('Fetch Error : ', err);
         });
     reset()
   }

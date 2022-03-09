@@ -8,7 +8,7 @@ router.post('/payments', async (req, res) => {
         const DateOfRequest = new Date()
         const payment = new payments({CardNumber, ExpDate, Cvv, Amount, DateOfRequest})
         await payment.save()
-        let data = await payments.findOne({CardNumber ,DateOfRequest })
+        let data = await payments.findOne({CardNumber, DateOfRequest})
         let RequestId = data["_id"]
         return res.json({RequestId: `${RequestId}`, Amount: `${Amount}`})
     } catch (e) {
